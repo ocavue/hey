@@ -238,6 +238,9 @@ importers:
       '@livepeer/react':
         specifier: 3.1.9
         version: 3.1.9(@types/react-dom@18.2.25)(@types/react@18.2.79)(react-dom@18.2.0)(react-native@0.73.7)(react@18.2.0)
+      '@prosekit/basic':
+        specifier: ^0.3.4
+        version: 0.3.4
       '@prosekit/core':
         specifier: ^0.4.0
         version: 0.4.0
@@ -6631,6 +6634,24 @@ packages:
     resolution: {integrity: sha512-pgIR+pSvhYHiUcqXVEZS31NrFOTENC9yFUdEAcx7cdQBoZPmHVjtjN4Ss6NzVDMYPrKJJ51U14EhEoeuBlMioQ==}
     dependencies:
       '@prisma/debug': 5.12.1
+
+  /@prosekit/basic@0.3.4:
+    resolution: {integrity: sha512-75aezW5iEiwOnWhF0gRdI1XoYpH/gKbxitEAFIlpJgoiu5OC8HnOd8qIdoXYWoBKcPsFg6kBlaGE0ct1K52DaA==}
+    dependencies:
+      '@prosekit/core': 0.4.0
+      '@prosekit/extensions': 0.4.2
+      '@prosekit/pm': 0.1.2
+    transitivePeerDependencies:
+      - '@types/hast'
+      - highlight.js
+      - lowlight
+      - prosemirror-model
+      - prosemirror-state
+      - prosemirror-transform
+      - prosemirror-view
+      - refractor
+      - shikiji
+    dev: false
 
   /@prosekit/core@0.4.0:
     resolution: {integrity: sha512-gqTGk3gH44O2tJ+qY2pyoy+aCt13KnzrtYAMpti2yciuHfCX/mhUFD8hlqbbzA3Na2HX8S8SI2x2/F2vzlI+dg==}
