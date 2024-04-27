@@ -1,8 +1,10 @@
+import { Regex } from '@hey/data/regex';
 import {
   defineBaseCommands,
   defineBaseKeymap,
   defineDoc,
   defineHistory,
+  defineMarkSpec,
   defineParagraph,
   defineText,
   union
@@ -12,10 +14,37 @@ import { defineCode } from 'prosekit/extensions/code';
 import { defineHeading } from 'prosekit/extensions/heading';
 import { defineItalic } from 'prosekit/extensions/italic';
 import { defineLink } from 'prosekit/extensions/link';
+import { defineMarkRule } from 'prosekit/extensions/mark-rule';
 import { defineMention } from 'prosekit/extensions/mention';
 import { definePlaceholder } from 'prosekit/extensions/placeholder';
 import { defineUnderline } from 'prosekit/extensions/underline';
 import { defineVirtualSelection } from 'prosekit/extensions/virtual-selection';
+
+function defineHashtag() {
+  return union([
+    defineMarkSpec({
+      name: 'hashtag',
+      toDOM: () => ['span', { class: 'text-brand-500' }, 0]
+    }),
+    defineMarkRule({
+      type: 'hashtag',
+      regex: Regex.hashtag
+    })
+  ]);
+}
+
+function defineCashtag() {
+  return union([
+    defineMarkSpec({
+      name: 'cashtag',
+      toDOM: () => ['span', { class: 'text-brand-500' }, 0]
+    }),
+    defineMarkRule({
+      type: 'cashtag',
+      regex: Regex.cashtag
+    })
+  ]);
+}
 
 export function defineTextEditorExtension() {
   return union([
@@ -30,6 +59,8 @@ export function defineTextEditorExtension() {
     defineBold(),
     defineUnderline(),
     defineCode(),
+    defineHashtag(),
+    defineCashtag(),
     defineLink(),
     defineVirtualSelection(),
     defineMention(),
