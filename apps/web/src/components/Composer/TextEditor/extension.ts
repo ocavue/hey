@@ -1,6 +1,5 @@
 import { Regex } from '@hey/data/regex';
 import {
-  Priority,
   defineBaseCommands,
   defineBaseKeymap,
   defineDoc,
@@ -8,8 +7,7 @@ import {
   defineMarkSpec,
   defineParagraph,
   defineText,
-  union,
-  withPriority
+  union
 } from 'prosekit/core';
 import { defineBold } from 'prosekit/extensions/bold';
 import { defineCode } from 'prosekit/extensions/code';
@@ -53,9 +51,9 @@ function defineCashtag() {
 
 function defineEmailMarkRule() {
   return defineMarkRule({
-    type: 'link',
+    attrs: (match) => ({ href: match[1] }),
     regex: EMAIL_MATCHER,
-    attrs: (match) => ({ href: match[1] })
+    type: 'link'
   });
 }
 
