@@ -13,7 +13,7 @@ import { defineBold } from 'prosekit/extensions/bold';
 import { defineCode } from 'prosekit/extensions/code';
 import { defineHeading } from 'prosekit/extensions/heading';
 import { defineItalic } from 'prosekit/extensions/italic';
-import { defineLink } from 'prosekit/extensions/link';
+import { defineLinkMarkRule, defineLinkSpec } from 'prosekit/extensions/link';
 import { defineMarkRule } from 'prosekit/extensions/mark-rule';
 import { defineMention } from 'prosekit/extensions/mention';
 import { definePlaceholder } from 'prosekit/extensions/placeholder';
@@ -27,8 +27,8 @@ function defineHashtag() {
       toDOM: () => ['span', { class: 'text-brand-500' }, 0]
     }),
     defineMarkRule({
-      type: 'hashtag',
-      regex: Regex.hashtag
+      regex: Regex.hashtag,
+      type: 'hashtag'
     })
   ]);
 }
@@ -40,10 +40,14 @@ function defineCashtag() {
       toDOM: () => ['span', { class: 'text-brand-500' }, 0]
     }),
     defineMarkRule({
-      type: 'cashtag',
-      regex: Regex.cashtag
+      regex: Regex.cashtag,
+      type: 'cashtag'
     })
   ]);
+}
+
+function defineLink() {
+  return union([defineLinkMarkRule(), defineLinkSpec()]);
 }
 
 export function defineTextEditorExtension() {

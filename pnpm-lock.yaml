@@ -311,8 +311,8 @@ importers:
         specifier: ^5.3.0
         version: 5.3.0(plyr@3.7.8)(react@18.2.0)
       prosekit:
-        specifier: 0.0.0-next-20240427200701
-        version: 0.0.0-next-20240427200701(react-dom@18.2.0)(react@18.2.0)
+        specifier: 0.0.0-next-20240428073418
+        version: 0.0.0-next-20240428073418(react-dom@18.2.0)(react@18.2.0)
       rc-slider:
         specifier: 10.6.2
         version: 10.6.2(react-dom@18.2.0)(react@18.2.0)
@@ -6667,12 +6667,12 @@ packages:
     dependencies:
       '@prisma/debug': 5.12.1
 
-  /@prosekit/basic@0.0.0-next-20240427200701:
-    resolution: {integrity: sha512-LMujD9QsymnpGvm1YfdpX2DKl3GPbyjr+goY+OQcJ2XbR776YJJMx2uZdYaUSowdT0ItPD/nXBwfsI5X76T8jQ==}
+  /@prosekit/basic@0.0.0-next-20240428073418:
+    resolution: {integrity: sha512-dQJgPfo1DtqyyRZ9JTTW28Vq9/EdMjVCEqza9hLyeHyIDayfFXYOLZ9O9r5gFcngrsU74KwXS9m/tXtue313dA==}
     dependencies:
-      '@prosekit/core': 0.0.0-next-20240427200701
-      '@prosekit/extensions': 0.0.0-next-20240427200701
-      '@prosekit/pm': 0.0.0-next-20240427200701
+      '@prosekit/core': 0.0.0-next-20240428073418
+      '@prosekit/extensions': 0.0.0-next-20240428073418
+      '@prosekit/pm': 0.0.0-next-20240428073418
     transitivePeerDependencies:
       - '@types/hast'
       - highlight.js
@@ -6685,20 +6685,20 @@ packages:
       - shikiji
     dev: false
 
-  /@prosekit/core@0.0.0-next-20240427200701:
-    resolution: {integrity: sha512-8juIfLWQr9hSFn5OBgCHZwslYnyMr8dWg2Gr5PFaDBonsKKtyVs7nToiyZ16MJqtfjUQVG+ZZ/vl/aRdpQd7ZA==}
+  /@prosekit/core@0.0.0-next-20240428073418:
+    resolution: {integrity: sha512-oYWj6eEKleM+e1umgNO2S/4LGzCfNf2dTXAKpko42Qfj7eVeGrUrpOWF/Kj4HVrxzeG5q78QArbUl8gMeT9a3Q==}
     dependencies:
-      '@prosekit/pm': 0.0.0-next-20240427200701
+      '@prosekit/pm': 0.0.0-next-20240428073418
       clsx: 2.1.1
       orderedmap: 2.1.1
       type-fest: 4.17.0
     dev: false
 
-  /@prosekit/extensions@0.0.0-next-20240427200701:
-    resolution: {integrity: sha512-w2Iv6geLl48WeHkLDOAo6lLA0ptvyoOZTe/L6XR0BLAKKryAynAkNh9c/GUuHxAmroif+yG7I2+WRikEskqYPg==}
+  /@prosekit/extensions@0.0.0-next-20240428073418:
+    resolution: {integrity: sha512-RmFPwWvHutkNMUid23HO7hLK6EaujJqNMoFDVHgV32DsiQe79U4kTDt5gYZuyTm9I0ZSzK9A1TkIevsirso6vw==}
     dependencies:
-      '@prosekit/core': 0.0.0-next-20240427200701
-      '@prosekit/pm': 0.0.0-next-20240427200701
+      '@prosekit/core': 0.0.0-next-20240428073418
+      '@prosekit/pm': 0.0.0-next-20240428073418
       prosemirror-dropcursor: 1.8.1
       prosemirror-flat-list: 0.5.0
       prosemirror-highlight: 0.5.0(shiki@1.3.0)
@@ -6716,10 +6716,10 @@ packages:
       - shikiji
     dev: false
 
-  /@prosekit/lit@0.0.0-next-20240427200701:
-    resolution: {integrity: sha512-R/1LBb+MKBXrt0nYYZ3NHblDpKBY4YTqyPZ7LzUii0O30L9rOvWwvpsGzS6MkFzqF0OP7okPrWRZuL0FOLPTdg==}
+  /@prosekit/lit@0.0.0-next-20240428073418:
+    resolution: {integrity: sha512-YKHqcRGc/ejr/MIATF5JzqaCLzmQtCbll16H6bSd2khPUljQI71xVSFU1j5MR8mBbDsZejeEefjVSvp7xicqeA==}
     dependencies:
-      '@prosekit/web': 0.0.0-next-20240427200701
+      '@prosekit/web': 0.0.0-next-20240428073418
     transitivePeerDependencies:
       - '@types/hast'
       - highlight.js
@@ -6732,8 +6732,8 @@ packages:
       - shikiji
     dev: false
 
-  /@prosekit/pm@0.0.0-next-20240427200701:
-    resolution: {integrity: sha512-0Pr54WI8eLS/WgodhAKLt4AtjzVzXzXCw7CVaOni5meAn4KHSTzepdhaSaqtlvXzm0qUppGysy2EzJN50HQ2IA==}
+  /@prosekit/pm@0.0.0-next-20240428073418:
+    resolution: {integrity: sha512-Pmme1O7h1IFqZPxElrljBkPlAuyjM9/U25EAp3TNkSEYtZuK1pfLPJsD/CFIX14aV7U5o6tiIVcVrsO6iOlSqw==}
     dependencies:
       prosemirror-commands: 1.5.2
       prosemirror-history: 1.4.0
@@ -6745,17 +6745,17 @@ packages:
       prosemirror-view: 1.33.5
     dev: false
 
-  /@prosekit/preact@0.0.0-next-20240427200701:
-    resolution: {integrity: sha512-5XfeTMCnf16q8yKyy51Q1T39iq73wFXdyiPUVSFMHBY9KcteOFUcdWr1DBmQKmMafVdmP2pMbIb35VwLEGaIHQ==}
+  /@prosekit/preact@0.0.0-next-20240428073418:
+    resolution: {integrity: sha512-1LMMrEd0CDqJNeooDDkkrNi1MuAE4khjrj++ELaV8d+fKIzIqdRg6+JuMVvDHvDbNPvJ0CDo2yH88WZ/vF0n6A==}
     peerDependencies:
       preact: '>= 10.11.0'
     peerDependenciesMeta:
       preact:
         optional: true
     dependencies:
-      '@prosekit/core': 0.0.0-next-20240427200701
-      '@prosekit/pm': 0.0.0-next-20240427200701
-      '@prosekit/web': 0.0.0-next-20240427200701
+      '@prosekit/core': 0.0.0-next-20240428073418
+      '@prosekit/pm': 0.0.0-next-20240428073418
+      '@prosekit/web': 0.0.0-next-20240428073418
       react-merge-refs: 2.1.1
     transitivePeerDependencies:
       - '@types/hast'
@@ -6769,8 +6769,8 @@ packages:
       - shikiji
     dev: false
 
-  /@prosekit/react@0.0.0-next-20240427200701(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-bn60tMMm8GQxYpW8UxsCCvyKlptC5hI+yeqT96oviVUUXtVChUX+wN/w0B6sPjHc/ahCuUQx0Hfpzrh9b1y48w==}
+  /@prosekit/react@0.0.0-next-20240428073418(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-FVe/JyWOknYqIjY4v3HtOc6ziojP2qjTDAetxo93YrNnC3FCVOMNbWx1y8MqkVhv1lZekRNdW9/unpFJFeOEuQ==}
     peerDependencies:
       react: '>= 18.2.0'
       react-dom: '>= 18.2.0'
@@ -6780,9 +6780,9 @@ packages:
       react-dom:
         optional: true
     dependencies:
-      '@prosekit/core': 0.0.0-next-20240427200701
-      '@prosekit/pm': 0.0.0-next-20240427200701
-      '@prosekit/web': 0.0.0-next-20240427200701
+      '@prosekit/core': 0.0.0-next-20240428073418
+      '@prosekit/pm': 0.0.0-next-20240428073418
+      '@prosekit/web': 0.0.0-next-20240428073418
       '@prosemirror-adapter/core': 0.2.6
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
@@ -6799,17 +6799,17 @@ packages:
       - shikiji
     dev: false
 
-  /@prosekit/solid@0.0.0-next-20240427200701:
-    resolution: {integrity: sha512-hh+GYyIayy757rfYqDcOMSR8/OS9qeNU82gKv11DgjWKM8Z9T4RKey6sgDHD9YRl4G9gaRcb3deYzh5R1F39Iw==}
+  /@prosekit/solid@0.0.0-next-20240428073418:
+    resolution: {integrity: sha512-iV+rSvvJPDvgWfe56VYzib8hlzgRi7UUE8ep0cvDTpYavlythtdRJRuf8a1KhQO5cM8oBuiIbTcsE5saMBQqxA==}
     peerDependencies:
       solid-js: '>= 1.7.0'
     peerDependenciesMeta:
       solid-js:
         optional: true
     dependencies:
-      '@prosekit/core': 0.0.0-next-20240427200701
-      '@prosekit/pm': 0.0.0-next-20240427200701
-      '@prosekit/web': 0.0.0-next-20240427200701
+      '@prosekit/core': 0.0.0-next-20240428073418
+      '@prosekit/pm': 0.0.0-next-20240428073418
+      '@prosekit/web': 0.0.0-next-20240428073418
     transitivePeerDependencies:
       - '@types/hast'
       - highlight.js
@@ -6822,17 +6822,17 @@ packages:
       - shikiji
     dev: false
 
-  /@prosekit/svelte@0.0.0-next-20240427200701:
-    resolution: {integrity: sha512-jxhY5A6ZTUGGnqfDFg+LoQXeyWcCThbFrxionFpxscKLIjr0qVTajttCMJ6aPSUe+dWVLi6dAn9DS9GhWLQ8cQ==}
+  /@prosekit/svelte@0.0.0-next-20240428073418:
+    resolution: {integrity: sha512-wR9NZmxdr0b/whEjSCWVj7cBKJwVNJaL3bxAjSpnBAY9ZEkzEIRKvHgS8ZBTFZoatJSR8sXHMc7WNHk8CT49+A==}
     peerDependencies:
       svelte: '>= 3.0.0'
     peerDependenciesMeta:
       svelte:
         optional: true
     dependencies:
-      '@prosekit/core': 0.0.0-next-20240427200701
-      '@prosekit/pm': 0.0.0-next-20240427200701
-      '@prosekit/web': 0.0.0-next-20240427200701
+      '@prosekit/core': 0.0.0-next-20240428073418
+      '@prosekit/pm': 0.0.0-next-20240428073418
+      '@prosekit/web': 0.0.0-next-20240428073418
     transitivePeerDependencies:
       - '@types/hast'
       - highlight.js
@@ -6845,17 +6845,17 @@ packages:
       - shikiji
     dev: false
 
-  /@prosekit/vue@0.0.0-next-20240427200701:
-    resolution: {integrity: sha512-QUEc592UlUoaEeNO0oE/iHmAvCTdfZrKp8sFo3gQgNV7o9L0QfPGexjOqENd6Eqgj1D8uYKUXkb6HqihHSPw+A==}
+  /@prosekit/vue@0.0.0-next-20240428073418:
+    resolution: {integrity: sha512-boZHo/DE7fdPLqdh/fz4hiuL8K1fjo7ffAjNhEcBTnzn7jpGkj5bcVMVu5NU5k43XDoYJfRlJ6DOs2IBNpF7bA==}
     peerDependencies:
       vue: '>= 3.0.0'
     peerDependenciesMeta:
       vue:
         optional: true
     dependencies:
-      '@prosekit/core': 0.0.0-next-20240427200701
-      '@prosekit/pm': 0.0.0-next-20240427200701
-      '@prosekit/web': 0.0.0-next-20240427200701
+      '@prosekit/core': 0.0.0-next-20240428073418
+      '@prosekit/pm': 0.0.0-next-20240428073418
+      '@prosekit/web': 0.0.0-next-20240428073418
       '@prosemirror-adapter/core': 0.2.6
     transitivePeerDependencies:
       - '@types/hast'
@@ -6869,8 +6869,8 @@ packages:
       - shikiji
     dev: false
 
-  /@prosekit/web@0.0.0-next-20240427200701:
-    resolution: {integrity: sha512-oA4+yvRiD2TneC9zjhWjJ4NGxu/nTvdpn2C/uflr+sV+NkWK52OAmpk4v5ymnjO5+C6X6mxWdVE6F0zx993BNw==}
+  /@prosekit/web@0.0.0-next-20240428073418:
+    resolution: {integrity: sha512-UrAVUJTnPc03gPd+MwoHQJhT+VT1PNwOPY46TTRxoSQpaEHTzR+Lwh5FYRg13y4zUaUK/EdvWOnIou5KCOg5mw==}
     dependencies:
       '@aria-ui/collection': 0.0.3
       '@aria-ui/core': 0.0.12
@@ -6880,9 +6880,9 @@ packages:
       '@aria-ui/presence': 0.0.7
       '@aria-ui/tooltip': 0.0.13
       '@floating-ui/dom': 1.6.3
-      '@prosekit/core': 0.0.0-next-20240427200701
-      '@prosekit/extensions': 0.0.0-next-20240427200701
-      '@prosekit/pm': 0.0.0-next-20240427200701
+      '@prosekit/core': 0.0.0-next-20240428073418
+      '@prosekit/extensions': 0.0.0-next-20240428073418
+      '@prosekit/pm': 0.0.0-next-20240428073418
       '@zag-js/dom-query': 0.48.0
     transitivePeerDependencies:
       - '@types/hast'
@@ -19259,8 +19259,8 @@ packages:
     resolution: {integrity: sha512-PgTgs/BlvHxOu8QuEN7wi5A0OmXaBcHpmCSTehcs6Uuu9IkDIEo13Hy7n898RHfrQ49vKCoGeWZSaAK01nwVig==}
     dev: false
 
-  /prosekit@0.0.0-next-20240427200701(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-d0j+U7zJCrMYjDUtsNvMUw5tNzhA+VHKoVKqXguEcL4ouqIt8ZJhJ6lRDcIHhLIuOIYKgxdq/AXfGZq6c06nUA==}
+  /prosekit@0.0.0-next-20240428073418(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-FPzCL/toWxuNY1rR52XxyxuS6OjLEL7UkDnyUrAYvrMthF7NzlB5RMCsEmPZhp3QErO9mwDken0xuv7yF//dtQ==}
     peerDependencies:
       preact: '>= 10.11.0'
       react: '>= 18.2.0'
@@ -19282,17 +19282,17 @@ packages:
       vue:
         optional: true
     dependencies:
-      '@prosekit/basic': 0.0.0-next-20240427200701
-      '@prosekit/core': 0.0.0-next-20240427200701
-      '@prosekit/extensions': 0.0.0-next-20240427200701
-      '@prosekit/lit': 0.0.0-next-20240427200701
-      '@prosekit/pm': 0.0.0-next-20240427200701
-      '@prosekit/preact': 0.0.0-next-20240427200701
-      '@prosekit/react': 0.0.0-next-20240427200701(react-dom@18.2.0)(react@18.2.0)
-      '@prosekit/solid': 0.0.0-next-20240427200701
-      '@prosekit/svelte': 0.0.0-next-20240427200701
-      '@prosekit/vue': 0.0.0-next-20240427200701
-      '@prosekit/web': 0.0.0-next-20240427200701
+      '@prosekit/basic': 0.0.0-next-20240428073418
+      '@prosekit/core': 0.0.0-next-20240428073418
+      '@prosekit/extensions': 0.0.0-next-20240428073418
+      '@prosekit/lit': 0.0.0-next-20240428073418
+      '@prosekit/pm': 0.0.0-next-20240428073418
+      '@prosekit/preact': 0.0.0-next-20240428073418
+      '@prosekit/react': 0.0.0-next-20240428073418(react-dom@18.2.0)(react@18.2.0)
+      '@prosekit/solid': 0.0.0-next-20240428073418
+      '@prosekit/svelte': 0.0.0-next-20240428073418
+      '@prosekit/vue': 0.0.0-next-20240428073418
+      '@prosekit/web': 0.0.0-next-20240428073418
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
     transitivePeerDependencies:
@@ -19320,7 +19320,7 @@ packages:
     dependencies:
       prosemirror-state: 1.4.3
       prosemirror-transform: 1.8.0
-      prosemirror-view: 1.33.4
+      prosemirror-view: 1.33.5
     dev: false
 
   /prosemirror-flat-list@0.5.0:
@@ -19331,7 +19331,7 @@ packages:
       prosemirror-model: 1.20.0
       prosemirror-state: 1.4.3
       prosemirror-transform: 1.8.0
-      prosemirror-view: 1.33.4
+      prosemirror-view: 1.33.5
     dev: false
 
   /prosemirror-highlight@0.5.0(shiki@1.3.0):
@@ -19416,21 +19416,13 @@ packages:
       prosemirror-model: 1.20.0
       prosemirror-state: 1.4.3
       prosemirror-transform: 1.8.0
-      prosemirror-view: 1.33.4
+      prosemirror-view: 1.33.5
     dev: false
 
   /prosemirror-transform@1.8.0:
     resolution: {integrity: sha512-BaSBsIMv52F1BVVMvOmp1yzD3u65uC3HTzCBQV1WDPqJRQ2LuHKcyfn0jwqodo8sR9vVzMzZyI+Dal5W9E6a9A==}
     dependencies:
       prosemirror-model: 1.20.0
-    dev: false
-
-  /prosemirror-view@1.33.4:
-    resolution: {integrity: sha512-xQqAhH8/HGleVpKDhQsrd+oqdyeKMxFtdCWDxWMmP+n0k27fBpyUqa8pA+RB5cFY8rqDDc1hll69aRZQa7UaAw==}
-    dependencies:
-      prosemirror-model: 1.20.0
-      prosemirror-state: 1.4.3
-      prosemirror-transform: 1.8.0
     dev: false
 
   /prosemirror-view@1.33.5:
