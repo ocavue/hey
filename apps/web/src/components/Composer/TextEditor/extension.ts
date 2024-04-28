@@ -60,11 +60,7 @@ function defineEmailMarkRule() {
 }
 
 function defineAutoLink() {
-  return union([
-    defineLinkSpec(),
-    defineLinkMarkRule(),
-    defineEmailMarkRule(),
-  ]);
+  return union([defineLinkSpec(), defineLinkMarkRule(), defineEmailMarkRule()]);
 }
 
 export function defineTextEditorExtension() {
