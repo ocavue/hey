@@ -1,5 +1,6 @@
 import { Regex } from '@hey/data/regex';
 import {
+  Priority,
   defineBaseCommands,
   defineBaseKeymap,
   defineDoc,
@@ -7,7 +8,8 @@ import {
   defineMarkSpec,
   defineParagraph,
   defineText,
-  union
+  union,
+  withPriority
 } from 'prosekit/core';
 import { defineBold } from 'prosekit/extensions/bold';
 import { defineCode } from 'prosekit/extensions/code';
@@ -19,6 +21,9 @@ import { defineMention } from 'prosekit/extensions/mention';
 import { definePlaceholder } from 'prosekit/extensions/placeholder';
 import { defineUnderline } from 'prosekit/extensions/underline';
 import { defineVirtualSelection } from 'prosekit/extensions/virtual-selection';
+
+const EMAIL_MATCHER =
+  /(([^\s"(),.:;<>@[\\\]]+(\.[^\s"(),.:;<>@[\\\]]+)*)|(".+"))@((\[(?:\d{1,3}\.){3}\d{1,3}])|(([\dA-Za-z\-]+\.)+[A-Za-z]{2,}))/g;
 
 function defineHashtag() {
   return union([
@@ -46,8 +51,20 @@ function defineCashtag() {
   ]);
 }
 
-function defineLink() {
-  return union([defineLinkMarkRule(), defineLinkSpec()]);
+function defineEmailMarkRule() {
+  return defineMarkRule({
+    type: 'link',
+    regex: EMAIL_MATCHER,
+    attrs: (match) => ({ href: match[1] })
+  });
+}
+
+function defineAutoLink() {
+  return union([
+    defineLinkSpec(),
+    withPriority(defineEmailMarkRule(), Priority.high),
+    defineLinkMarkRule()
+  ]);
 }
 
 export function defineTextEditorExtension() {
@@ -65,7 +82,7 @@ export function defineTextEditorExtension() {
     defineCode(),
     defineHashtag(),
     defineCashtag(),
-    defineLink(),
+    defineAutoLink(),
     defineVirtualSelection(),
     defineMention(),
     definePlaceholder({ placeholder: "What's ProseKit?!", strategy: 'doc' })
