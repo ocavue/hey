@@ -62,8 +62,8 @@ function defineEmailMarkRule() {
 function defineAutoLink() {
   return union([
     defineLinkSpec(),
-    withPriority(defineEmailMarkRule(), Priority.high),
-    defineLinkMarkRule()
+    defineLinkMarkRule(),
+    defineEmailMarkRule(),
   ]);
 }
 
