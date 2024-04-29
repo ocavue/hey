@@ -4,8 +4,5 @@ const base = require('@hey/ui/tailwind-preset');
 module.exports = {
   ...base,
   content: ['./src/**/*.{ts,tsx}', '../../packages/ui/src/*.{ts,tsx}'],
-  plugins: [
-    require('@tailwindcss/aspect-ratio'),
-    require('@tailwindcss/forms'),
-  ]
+  plugins: [require('@tailwindcss/aspect-ratio'), require('@tailwindcss/forms')]
 };

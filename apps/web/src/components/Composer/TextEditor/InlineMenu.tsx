@@ -1,14 +1,14 @@
+import {
+  BoldIcon,
+  CodeIcon,
+  ItalicIcon,
+  StrikethroughIcon,
+  UnderlineIcon
+} from 'lucide-react';
 import { useEditor } from 'prosekit/react';
 import { InlinePopover } from 'prosekit/react/inline-popover';
 
 import type { TextEditorExtension } from './extension';
-import {
-  BoldIcon,
-  ItalicIcon,
-  UnderlineIcon,
-  CodeIcon,
-  StrikethroughIcon
-} from 'lucide-react';
 
 import Toggle from './Toggle';
 
