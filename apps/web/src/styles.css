@@ -81,6 +81,11 @@ body {
   @apply opacity-50;
 }
 
+.ProseMirror .prosekit-virtual-selection {
+  box-shadow: none;
+  background-color: transparent;
+}
+
 .text-md {
   @apply !text-sm sm:!text-base;
 }
