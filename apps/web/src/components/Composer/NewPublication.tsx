@@ -107,7 +107,7 @@ const DraftSettings = dynamic(
 );
 
 interface NewPublicationProps {
-  publication: MirrorablePublication;
+  publication?: MirrorablePublication;
 }
 
 const NewPublication: FC<NewPublicationProps> = ({ publication }) => {
@@ -187,7 +187,7 @@ const NewPublication: FC<NewPublicationProps> = ({ publication }) => {
   const noOpenAction = !openAction;
   // Use Momoka if the profile the comment or quote has momoka proof and also check collect module has been disabled
   const useMomoka = isComment
-    ? publication.momoka?.proof
+    ? publication?.momoka?.proof
     : isQuote
       ? quotedPublication?.momoka?.proof
       : noCollect && noOpenAction;
@@ -236,7 +236,7 @@ const NewPublication: FC<NewPublicationProps> = ({ publication }) => {
 
     // Track in leafwatch
     const eventProperties = {
-      comment_on: isComment ? publication.id : null,
+      comment_on: isComment ? publication?.id : null,
       publication_collect_module: collectModule.type,
       publication_has_attachments: attachments.length > 0,
       publication_has_poll: showPollEditor,
@@ -392,7 +392,7 @@ const NewPublication: FC<NewPublicationProps> = ({ publication }) => {
         | MomokaCommentRequest
         | MomokaPostRequest
         | MomokaQuoteRequest = {
-        ...(isComment && { commentOn: publication.id }),
+        ...(isComment && { commentOn: publication?.id }),
         ...(isQuote && { quoteOn: quotedPublication?.id }),
         contentURI: `ar://${arweaveId}`
       };
@@ -437,7 +437,7 @@ const NewPublication: FC<NewPublicationProps> = ({ publication }) => {
         | OnchainPostRequest
         | OnchainQuoteRequest = {
         contentURI: `ar://${arweaveId}`,
-        ...(isComment && { commentOn: publication.id }),
+        ...(isComment && { commentOn: publication?.id }),
         ...(isQuote && { quoteOn: quotedPublication?.id }),
         openActionModules,
         ...(onlyFollowers && {
