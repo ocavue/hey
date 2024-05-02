@@ -16,7 +16,6 @@ import NewAttachments from '@components/Composer/NewAttachments';
 import QuotedPublication from '@components/Publication/QuotedPublication';
 import { AudioPublicationSchema } from '@components/Shared/Audio';
 import Wrapper from '@components/Shared/Embed/Wrapper';
-import withLexicalContext from '@components/Shared/Lexical/withLexicalContext';
 import errorToast from '@helpers/errorToast';
 import { Leafwatch } from '@helpers/leafwatch';
 import uploadToArweave from '@helpers/uploadToArweave';
@@ -31,10 +30,7 @@ import { ReferenceModuleType } from '@hey/lens';
 import { Button, Card, ErrorMessage } from '@hey/ui';
 import cn from '@hey/ui/cn';
 import { MetadataAttributeType } from '@lens-protocol/metadata';
-import { $convertFromMarkdownString } from '@lexical/markdown';
-import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext';
 import { useUnmountEffect } from 'framer-motion';
-import { $getRoot } from 'lexical';
 import dynamic from 'next/dynamic';
 import { useEffect, useRef, useState } from 'react';
 import toast from 'react-hot-toast';
@@ -68,7 +64,6 @@ import type { TextEditorHandle } from './TextEditor';
 
 import LivestreamEditor from './Actions/LivestreamSettings/LivestreamEditor';
 import PollEditor from './Actions/PollSettings/PollEditor';
-import Editor from './Editor';
 import LinkPreviews from './LinkPreviews';
 import OpenActions from './OpenActions';
 import Discard from './Post/Discard';
@@ -178,7 +173,6 @@ const NewPublication: FC<NewPublicationProps> = ({ publication }) => {
 
   const editorRef = useRef<TextEditorHandle>(null);
 
-  const [editor] = useLexicalComposerContext();
   const createPoll = useCreatePoll();
   const getMetadata = usePublicationMetadata();
 
@@ -199,10 +193,6 @@ const NewPublication: FC<NewPublicationProps> = ({ publication }) => {
       : noCollect && noOpenAction;
 
   const reset = () => {
-    editor.update(() => {
-      $getRoot().clear();
-    });
-
     setPublicationContent('');
     setShowPollEditor(false);
     resetPollConfig();
@@ -294,13 +284,6 @@ const NewPublication: FC<NewPublicationProps> = ({ publication }) => {
   useEffect(() => {
     setPublicationContentError('');
   }, [audioPublication]);
-
-  useEffect(() => {
-    editor.update(() => {
-      $convertFromMarkdownString(publicationContent);
-    });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
 
   const getAnimationUrl = () => {
     const fallback =
@@ -557,7 +540,6 @@ const NewPublication: FC<NewPublicationProps> = ({ publication }) => {
         />
       ) : null}
       <TextEditor defaultMarkdown={publicationContent} editorRef={editorRef} />
-      <Editor />
       {publicationContentError ? (
         <div className="mt-1 px-5 pb-3 text-sm font-bold text-red-500">
           {publicationContentError}
@@ -619,4 +601,4 @@ const NewPublication: FC<NewPublicationProps> = ({ publication }) => {
   );
 };
 
-export default withLexicalContext(NewPublication);
+export default NewPublication;
