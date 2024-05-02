@@ -24,14 +24,14 @@ const TextEditorMenus = dynamic(() => import('./TextEditorMenus'), {
 
 const TextEditor = (props: {
   /**
-   * An imperative handle to operate the editor.
-   */
-  editorRef: React.Ref<TextEditorHandle>;
-
-  /**
    * The initial content of the editor in Markdown format.
    */
   defaultMarkdown?: string;
+
+  /**
+   * An imperative handle to operate the editor.
+   */
+  editorRef: React.Ref<TextEditorHandle>;
 }) => {
   const { currentProfile } = useProfileStore();
 
@@ -44,7 +44,7 @@ const TextEditor = (props: {
 
   const editor = useMemo(() => {
     const extension = defineTextEditorExtension();
-    return createEditor({ extension, defaultHTML });
+    return createEditor({ defaultHTML, extension });
   }, [defaultHTML]);
 
   useContentChange(editor);
