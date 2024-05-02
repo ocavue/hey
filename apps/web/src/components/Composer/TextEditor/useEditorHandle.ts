@@ -20,7 +20,7 @@ export interface TextEditorHandle {
   setMarkdown: (markdown: string) => void;
 }
 
-export type EditorRef = React.Ref<TextEditorHandle>;
+export type EditorRef = React.RefObject<TextEditorHandle>;
 
 export const useEditorHandle = (
   editor: Editor<TextEditorExtension>,
