@@ -4,8 +4,9 @@ import { motion } from 'framer-motion';
 import { type FC, useState } from 'react';
 
 import List from './List';
+import type { EditorRef } from '@components/Composer/TextEditor';
 
-const DraftSettings: FC = () => {
+const DraftSettings: FC<{editorRef: EditorRef}> = ({editorRef}) => {
   const [showModal, setShowModal] = useState(false);
 
   return (
@@ -28,7 +29,7 @@ const DraftSettings: FC = () => {
         size="md"
         title="Drafts"
       >
-        <List setShowModal={setShowModal} />
+        <List setShowModal={setShowModal} editorRef={editorRef}/>
       </Modal>
     </>
   );

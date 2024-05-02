@@ -15,12 +15,14 @@ import { useState } from 'react';
 import toast from 'react-hot-toast';
 import { useCollectModuleStore } from 'src/store/non-persisted/publication/useCollectModuleStore';
 import { usePublicationStore } from 'src/store/non-persisted/publication/usePublicationStore';
+import { EditorRef } from '@components/Composer/TextEditor';
 
 interface ListProps {
+  editorRef: EditorRef,
   setShowModal: (showModal: boolean) => void;
 }
 
-const List: FC<ListProps> = ({ setShowModal }) => {
+const List: FC<ListProps> = ({ setShowModal, editorRef }) => {
   const { setDraftId, setPublicationContent } = usePublicationStore();
   const { setCollectModule } = useCollectModuleStore((state) => state);
 
@@ -98,6 +100,8 @@ const List: FC<ListProps> = ({ setShowModal }) => {
     editor.update(() => {
       $convertFromMarkdownString(draft.content);
     });
+
+    editorRef.current?.setMarkdown(draft.content)
 
     setPublicationContent(draft.content);
 

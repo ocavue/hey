@@ -598,7 +598,7 @@ const NewPublication: FC<NewPublicationProps> = ({ publication }) => {
           ) : null}
           <PollSettings />
           {!isComment && <LivestreamSettings />}
-          {isPro && <DraftSettings />}
+          {isPro && <DraftSettings editorRef={editorRef} />}
         </div>
         <div className="ml-auto mt-2 sm:mt-0">
           <Button

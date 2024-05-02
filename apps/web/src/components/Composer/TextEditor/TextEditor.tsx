@@ -21,7 +21,12 @@ const TextEditorMenus = dynamic(() => import('./TextEditorMenus'), {
   ssr: false
 });
 
-const TextEditor = (props: { editorRef: React.Ref<TextEditorHandle> }) => {
+const TextEditor = (props: {
+  /**
+   * An imperative handle to operate the editor.
+   */
+  editorRef: React.Ref<TextEditorHandle>;
+}) => {
   const { currentProfile } = useProfileStore();
   const editor = useMemo(() => {
     const extension = defineTextEditorExtension();
