@@ -1,9 +1,5 @@
 import type { FC } from 'react';
 
-import LexicalAutoLinkPlugin from '@components/Shared/Lexical/Plugins/AutoLinkPlugin';
-import EmojiPickerPlugin from '@components/Shared/Lexical/Plugins/EmojiPicker';
-import ImagesPlugin from '@components/Shared/Lexical/Plugins/ImagesPlugin';
-import MentionsPlugin from '@components/Shared/Lexical/Plugins/MentionsPlugin';
 import { Errors } from '@hey/data/errors';
 import getAvatar from '@hey/helpers/getAvatar';
 import { Image } from '@hey/ui';
@@ -56,7 +52,6 @@ const Editor: FC = () => {
         src={getAvatar(currentProfile)}
       />
       <div className="relative w-full">
-        <EmojiPickerPlugin />
         <RichTextPlugin
           contentEditable={
             <ContentEditable className="mt-[8.5px] min-h-[80px] overflow-auto leading-6 sm:leading-[26px]" />
@@ -76,11 +71,8 @@ const Editor: FC = () => {
             });
           }}
         />
-        <LexicalAutoLinkPlugin />
         <HistoryPlugin />
         <HashtagPlugin />
-        <MentionsPlugin />
-        <ImagesPlugin />
         <MarkdownShortcutPlugin transformers={TRANSFORMERS} />
       </div>
     </div>
