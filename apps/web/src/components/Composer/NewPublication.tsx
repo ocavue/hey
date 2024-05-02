@@ -556,7 +556,7 @@ const NewPublication: FC<NewPublicationProps> = ({ publication }) => {
           title="Transaction failed!"
         />
       ) : null}
-      <TextEditor editorRef={editorRef} />
+      <TextEditor editorRef={editorRef} defaultMarkdown={publicationContent} />
       <Editor />
       {publicationContentError ? (
         <div className="mt-1 px-5 pb-3 text-sm font-bold text-red-500">
