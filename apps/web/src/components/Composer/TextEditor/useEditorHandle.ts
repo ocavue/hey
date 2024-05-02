@@ -1,8 +1,8 @@
-import { nodeFromHTML, type Editor } from 'prosekit/core';
-
+import { type Editor, nodeFromHTML } from 'prosekit/core';
 import { useImperativeHandle } from 'react';
 
 import type { TextEditorExtension } from './extension';
+
 import { htmlFromMarkdown } from './markdown';
 
 /**

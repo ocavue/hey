@@ -1,3 +1,4 @@
+import type { EditorRef } from '@components/Composer/TextEditor';
 import type { Draft } from '@hey/types/hey';
 import type { FC } from 'react';
 
@@ -15,14 +16,13 @@ import { useState } from 'react';
 import toast from 'react-hot-toast';
 import { useCollectModuleStore } from 'src/store/non-persisted/publication/useCollectModuleStore';
 import { usePublicationStore } from 'src/store/non-persisted/publication/usePublicationStore';
-import { EditorRef } from '@components/Composer/TextEditor';
 
 interface ListProps {
-  editorRef: EditorRef,
+  editorRef: EditorRef;
   setShowModal: (showModal: boolean) => void;
 }
 
-const List: FC<ListProps> = ({ setShowModal, editorRef }) => {
+const List: FC<ListProps> = ({ editorRef, setShowModal }) => {
   const { setDraftId, setPublicationContent } = usePublicationStore();
   const { setCollectModule } = useCollectModuleStore((state) => state);
 
@@ -101,7 +101,7 @@ const List: FC<ListProps> = ({ setShowModal, editorRef }) => {
       $convertFromMarkdownString(draft.content);
     });
 
-    editorRef.current?.setMarkdown(draft.content)
+    editorRef.current?.setMarkdown(draft.content);
 
     setPublicationContent(draft.content);
 
