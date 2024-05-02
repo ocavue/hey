@@ -4,8 +4,14 @@ import { useImperativeHandle } from 'react';
 
 import type { TextEditorExtension } from './extension';
 
+/**
+ * Some methods for operating the editor from outside the editor component.
+ */
 export interface TextEditorHandle {
-  insertText: (emoji: string) => void;
+  /**
+   * Insert text at the current text cursor position.
+   */
+  insertText: (text: string) => void;
 }
 
 export const useEditorHandle = (
@@ -16,9 +22,10 @@ export const useEditorHandle = (
     ref,
     (): TextEditorHandle => ({
       insertText: (text: string): void => {
-        if (editor.mounted) {
-          editor.commands.insertText({ text });
+        if (!editor.mounted) {
+          return;
         }
+        editor.commands.insertText({ text });
       }
     }),
     [editor]
