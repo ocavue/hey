@@ -11,12 +11,13 @@ import { notAllowed } from 'src/helpers/responses';
 export const get: Handler = async (req, res) => {
   const accessToken = req.headers['x-access-token'] as string;
 
-  if (!(await validateLensAccount(req))) {
-    return notAllowed(res);
-  }
+  // if (!(await validateLensAccount(req))) {
+  //   return notAllowed(res);
+  // }
 
   try {
     const payload = parseJwt(accessToken);
+    console.log(`Finding draftPublication from profileId ${payload.id}`);
     const result = await prisma.draftPublication.findMany({
       orderBy: { updatedAt: 'desc' },
       where: { profileId: payload.id }
@@ -26,6 +27,8 @@ export const get: Handler = async (req, res) => {
 
     return res.status(200).json({ result, success: true });
   } catch (error) {
+    console.log('/drafts/all ERROR', error);
+
     return catchedError(res, error);
   }
 };
