@@ -70,7 +70,7 @@ export const defineTextEditorExtension = () => {
     defineAutoLink(),
     defineVirtualSelection(),
     defineMention(),
-    definePlaceholder({ placeholder: "What's ProseKit?!", strategy: 'doc' })
+    definePlaceholder({ placeholder: "What's new?!", strategy: 'doc' })
   ]);
 };
 
