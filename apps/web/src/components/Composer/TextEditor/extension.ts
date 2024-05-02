@@ -1,3 +1,5 @@
+import type { MentionAttrs } from 'prosekit/extensions/mention';
+
 import { Regex } from '@hey/data/regex';
 import {
   defineBaseCommands,
@@ -16,10 +18,7 @@ import { defineHeading } from 'prosekit/extensions/heading';
 import { defineItalic } from 'prosekit/extensions/italic';
 import { defineLinkMarkRule, defineLinkSpec } from 'prosekit/extensions/link';
 import { defineMarkRule } from 'prosekit/extensions/mark-rule';
-import {
-  MentionAttrs,
-  defineMentionCommands
-} from 'prosekit/extensions/mention';
+import { defineMentionCommands } from 'prosekit/extensions/mention';
 import { definePlaceholder } from 'prosekit/extensions/placeholder';
 import { defineStrike } from 'prosekit/extensions/strike';
 import { defineUnderline } from 'prosekit/extensions/underline';
@@ -57,20 +56,21 @@ const defineAutoLink = () => {
 
 const defineMentionSpec = () => {
   return defineNodeSpec({
-    name: 'mention',
     atom: true,
+    attrs: { id: {}, kind: { default: '' }, value: {} },
     group: 'inline',
-    attrs: { id: {}, value: {}, kind: { default: '' } },
     inline: true,
+    name: 'mention',
     parseDOM: [
       {
-        tag: `span[data-mention]`,
         getAttrs: (dom): MentionAttrs => {
-          const id = (dom as HTMLElement).getAttribute('data-id') || '';
-          const kind = (dom as HTMLElement).getAttribute('data-mention') || '';
-          const value = stripLensPrefix((dom as HTMLElement).textContent || '');
+          const el = dom as HTMLElement;
+          const id = el.getAttribute('data-id') || '';
+          const kind = el.getAttribute('data-mention') || '';
+          const value = el.textContent?.replace(/^@(?:lens\/)?/g, '') || '';
           return { id, kind, value };
-        }
+        },
+        tag: `span[data-mention]`
       }
     ],
     toDOM(node) {
@@ -99,10 +99,6 @@ const defineMentionSpec = () => {
       ];
     }
   });
-};
-
-const stripLensPrefix = (str: string) => {
-  return str.replace(/^\@(?:lens\/)/g, '');
 };
 
 const defineMention = () => {
