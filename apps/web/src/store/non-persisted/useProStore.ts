@@ -9,9 +9,9 @@ interface State {
 }
 
 const store = create<State>((set) => ({
-  isPro: false,
+  isPro: true,
   proExpiresAt: null,
-  setIsPro: (isPro) => set(() => ({ isPro })),
+  setIsPro: (isPro) => set(() => ({ isPro: true })),
   setProExpiresAt: (proExpiresAt) => set(() => ({ proExpiresAt }))
 }));
 
